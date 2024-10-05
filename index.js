@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
 app.get('/calculate-returns', (req,res)=> {
    let boughtAt=parseFloat(req.query.boughtAt);
    let marketPrice=parseFloat(req.query.marketPrice);
+   let quantity=parseFloat(req.query.quantity);
 
-   let result=(marketPrice-boughtAt)*2;
+   let result=(marketPrice-boughtAt)*quantity;
    res.send(result.toString());
 })
 
